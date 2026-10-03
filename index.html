@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>喵喵阿忱 - 个人名片</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+        background-color: #f8fafc;
+        color: #333842;
+        line-height: 1.6;
+    }
+
+    nav {
+        background: #ffffff;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        padding: 1rem 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .nav-container {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 2.5rem;
+    }
+
+    .nav-container a {
+        text-decoration: none;
+        color: #333842;
+        font-weight: 500;
+        transition: color 0.25s;
+    }
+
+    .nav-container a:hover {
+        color: #5B8DEF;
+    }
+
+    .container {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem;
+        text-align: center;
+    }
+
+    .avatar {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 12px rgba(91, 141, 239, 0.18);
+        margin-bottom: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        color: #222831;
+        margin-bottom: 0.6rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+        color: #555a64;
+        margin-bottom: 2.5rem;
+    }
+
+    .about-section {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        margin-bottom: 2.5rem;
+    }
+
+    .about-section h2 {
+        color: #5B8DEF;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .about-section p {
+        color: #444952;
+        font-size: 1rem;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .social-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: #5B8DEF;
+        color: #fff;
+        display: grid;
+        place-items: center;
+        text-decoration: none;
+        font-size: 20px;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-4px);
+        opacity: 0.85;
+    }
+
+    footer {
+        text-align: center;
+        padding: 1.5rem;
+        color: #777;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+        .nav-container {
+            justify-content: center;
+            gap: 1.8rem;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+<nav>
+    <div class="nav-container">
+        <a href="#home">首页</a>
+        <a href="#about">关于我</a>
+        <a href="#contact">联系我</a>
+    </div>
+</nav>
+
+<main class="container" id="home">
+    <!-- 本地图片，和html同文件夹，名字cat.jpg -->
+    <img class="avatar" alt="喵喵阿忱头像" src="cat.jpg" />
+
+    <h1>喵喵阿忱</h1>
+    <p class="tagline">嗨嗨，这里是有趣的喵喵阿忱频道!一起玩耍吧~</p>
+
+    <section class="about-section" id="about">
+        <h2>关于我</h2>
+        <p>喜欢探索各类有趣事物，热爱游戏与生活。乐于分享自己的想法与作品，待人友善，期待和各位相遇交流。保持好奇心，慢慢探索世界✨</p>
+    </section>
+
+    <section id="contact">
+        <div class="social-links">
+            <a class="social-icon" href="#" aria-label="B站">📺</a>
+            <a class="social-icon" href="#" aria-label="Github">💻</a>
+            <a class="social-icon" href="#" aria-label="邮箱">✉️</a>
+            <a class="social-icon" href="#" aria-label="微博">💬</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © 2026 XBAOS
+</footer>
+
+<script>
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
